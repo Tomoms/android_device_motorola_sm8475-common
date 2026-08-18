@@ -5,7 +5,6 @@ clk-rpmh.ko
 gcc-waipio.ko
 icc-rpmh.ko
 qcom_ipcc.ko
-qcom_ipc_logging.ko
 qcom-pdc.ko
 qcom_tsens.ko
 rpmh-regulator.ko
@@ -174,7 +173,6 @@ qcom_soc_wdt.ko
 sys_pm_vx.ko
 msm_ext_display.ko
 icnss2.ko
-rimps_log.ko
 plh_scmi.ko
 gplaf_scmi.ko
 shared_rail_scmi.ko
@@ -222,7 +220,6 @@ usb_f_qdss.ko
 usb_f_ccid.ko
 usb_f_cdev.ko
 usb_f_gsi.ko
-f_fs_ipc_log.ko
 ucsi_glink.ko
 repeater.ko
 repeater-i2c-eusb2.ko
