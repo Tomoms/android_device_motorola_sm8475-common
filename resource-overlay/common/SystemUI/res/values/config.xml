@@ -6,4 +6,8 @@
 <resources>
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
+
+    <!-- Comma-separated list of packages to exclude from camera protection e.g.
+    "com.android.systemui,com.android.xyz" -->
+    <string name="config_cameraProtectionExcludedPackages" translatable="false">com.motorola.camera3</string>
 </resources>
