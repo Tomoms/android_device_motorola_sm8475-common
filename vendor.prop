@@ -134,7 +134,8 @@ vendor.qcom.bluetooth.soc=hastings
 
 # Camera
 camera.disable_zsl_mode=1
-persist.vendor.camera.privapp.list=com.motorola.camera3
+persist.vendor.camera.privapp.list=org.lineageos.aperture,com.motorola.camera3
+vendor.camera.aux.packagelist=org.lineageos.aperture,com.motorola.camera3
 
 # CNE
 persist.vendor.cne.feature=1
