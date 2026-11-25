@@ -41,13 +41,16 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
     # Load ADSP firmware for PMIC
+    mkdir /super_firmware
     mkdir /firmware
-    mount ext4 /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro context=u:object_r:firmware_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /super_firmware ro nosuid nodev context=u:object_r:firmware_file:s0
+    mount ext4 loop@/super_firmware/NON-HLOS.bin /firmware ro nosuid nodev context=u:object_r:firmware_file:s0
 
-on property:dev.mnt.blk.firmware=*
+on property:dev.mnt.blk.super_firmware=*
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
 
 on property:init.svc.fastbootd=running
     wait /sys/class/power_supply/battery
     umount /firmware
+    umount /super_firmware
